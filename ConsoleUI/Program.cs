@@ -5,15 +5,20 @@ using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 
-ProductTest();
+//ProductTest();
 
 CategoryManager categoryManager=new CategoryManager(new EfCategoryDal());
 
-foreach (var category in categoryManager.GetAll())
-{
-    Console.WriteLine(category.CategoryName);
-}
+//foreach (var category in categoryManager.GetAll())
+//{
+//    Console.WriteLine(category.CategoryName);
+//}
 
+
+//var a = categoryManager.GetById(2);
+//Console.WriteLine(a.CategoryName);
+
+ProductTest();
 
 static void ProductTest()
 {
