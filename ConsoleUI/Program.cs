@@ -24,9 +24,21 @@ static void ProductTest()
 {
     ProductManager productManager = new ProductManager(new EfProductDal());
 
-    foreach (var product in productManager.GetProductsDetail())
+    var result = productManager.GetProductsDetail();
+
+    if (result.Success)
     {
-        Console.WriteLine(product.ProductName+ " / " + product.CategoryName);
+        foreach (var product in productManager.GetProductsDetail().Data)
+        {
+            Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+        }
     }
+
+    else
+    {
+        Console.WriteLine(result.Message);
+    }
+
+   
 }
 
